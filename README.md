@@ -44,12 +44,6 @@ Automated PowerShell solution that creates Active Directory users from Zendesk t
 ### `ADCreate.ps1` - Main Automation Script
 Fetches tickets from Zendesk, exports to CSV, creates AD users, and sends welcome emails. This is the complete end-to-end automation script.
 
-### `Fetch_Onboarding_New_Open_ZeroComments.ps1` - Fetch Only Script
-Fetches tickets from Zendesk and exports to CSV without creating AD users. Useful for testing or manual review before user creation.
-
-### `ADCreate_manual.ps1` - Manual User Creation Script
-Creates AD users from an existing CSV file. Useful for manual processing or when tickets are already exported.
-
 ## Configuration
 
 ### Finding Zendesk Custom Field IDs
@@ -109,39 +103,6 @@ firstname,lastname,username,department,jobtitle,personalemail,employeetype,manag
     -FieldID_Manager $FieldID_Manager `
     -FieldID_JobTitle $FieldID_JobTitle `
     -FieldID_EmployeeType $FieldID_EmployeeType `
-    -AD_OU $AD_OU `
-    -AD_DomainName $AD_DomainName `
-    -EmailDomain $EmailDomain `
-    -SmtpServer $SmtpServer `
-    -SmtpUsername $SmtpUsername `
-    -CredentialFile $CredentialFile `
-    -FromEmail $FromEmail `
-    -EmailSubject $EmailSubject `
-    -CompanyName $CompanyName
-```
-
-### Running the Fetch Script Only
-
-```powershell
-.\Fetch_Onboarding_New_Open_ZeroComments.ps1 `
-    -ZendeskUrl $ZendeskUrl `
-    -ZendeskEmail $ZendeskEmail `
-    -ZendeskApiToken $ZendeskApiToken `
-    -FieldID_FirstName $FieldID_FirstName `
-    -FieldID_LastName $FieldID_LastName `
-    -FieldID_PersonalEmail $FieldID_PersonalEmail `
-    -FieldID_Department $FieldID_Department `
-    -FieldID_Manager $FieldID_Manager `
-    -FieldID_JobTitle $FieldID_JobTitle `
-    -FieldID_EmployeeType $FieldID_EmployeeType `
-    -EmailDomain $EmailDomain
-```
-
-### Running Manual User Creation
-
-```powershell
-.\ADCreate_manual.ps1 `
-    -CSVfile "C:\Scripts\Newaccount.csv" `
     -AD_OU $AD_OU `
     -AD_DomainName $AD_DomainName `
     -EmailDomain $EmailDomain `
