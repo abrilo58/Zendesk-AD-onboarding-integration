@@ -1,0 +1,32 @@
+# Logs
+logs/
+*.log
+*.txt
+
+# CSV files with user data
+*.csv
+!*.csv.example
+
+# Credentials and secrets
+*.secret
+*secret*.txt
+*.key
+*.pem
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Temporary files
+*.tmp
+*.temp
+
