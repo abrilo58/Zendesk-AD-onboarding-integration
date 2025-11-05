@@ -37,8 +37,7 @@ param(
     [Parameter(Mandatory=$true)]
     [long]$FieldID_EmployeeType,
     
-    [long]$FieldID_EquipmentIssuedFrom = 0,  # Optional
-    
+  
     # AD Configuration
     [Parameter(Mandatory=$true)]
     [string]$AD_OU,
